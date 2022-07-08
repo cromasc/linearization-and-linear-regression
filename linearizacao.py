@@ -61,4 +61,4 @@ for i in range(len(erroy)): print(f'w{i+1} = {round((1/erroy[i]**2),5)}')
 
 print(f'\nsoma1 = {round(soma1, 5)}\nsoma2 = {round(soma2, 5)}\nsoma3 = {round(soma3, 5)}\nsoma4 = {round(soma4, 5)}\nsoma5 = {round(soma5, 5)}\ndelta = {round(delta, 5)}\n\na = {round(a, 5)} +/- {round(erroa, 5)}\nb = {round(b, 5)} +/- {round(errob, 5)}\n')
 
-print("Esses valores consideram o eixo y como sendo o eixo que possui erros estatisticos e/ou experimentais. O eixo x não possui erros. Para calcular os erros no eixo x, basta fazer a inversa da função obtida na linearização, ou seja, y = (1/a)x - b/a")
+print(f"Esses valores consideram o eixo y como sendo o eixo que possui erros estatisticos e/ou experimentais. O eixo x não possui erros. Para calcular os erros no eixo x, basta fazer a inversa da função obtida na linearização, ou seja, \ny = {round((1/a),5)}x - {round(abs(b/a),5)}") if b/a >= 0 else print(f"Esses valores consideram o eixo y como sendo o eixo que possui erros estatisticos e/ou experimentais. O eixo x não possui erros. Para calcular os erros no eixo x, basta fazer a inversa da função obtida na linearização, ou seja, \ny = {round((1/a),5)}x + {round(abs(b/a),5)}")
