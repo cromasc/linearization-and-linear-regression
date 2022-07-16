@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 # txt archive
+medidas.txt
 prova.txt
