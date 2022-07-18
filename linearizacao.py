@@ -19,8 +19,12 @@ lny = [round((np.log(i[0])),5) for i in y]
 erroy = [round((i[1]/i[0]),5) for i in y]
 lnx = [round(np.log(i),5) for i in x]
 
+# lny = [round(np.log(i),5) for i in x]
+# erroy = [round((i[1]/i[0]),5) for i in y]
+# lnx = [round((np.log(i[0])),5) for i in y]
+
 # lnv = [round(np.log(i),5) for i in v]
-print('-----------------------------------------------------------------')
+print('\n-----------------------------------------------------------------\n')
 
 for i in y: print(f'y{y.index(i)+1}: {i[0]} +/- {i[1]}')
 
@@ -61,4 +65,16 @@ for i in range(len(erroy)): print(f'w{i+1} = {round((1/erroy[i]**2),5)}')
 
 print(f'\nsoma1 = {round(soma1, 5)}\nsoma2 = {round(soma2, 5)}\nsoma3 = {round(soma3, 5)}\nsoma4 = {round(soma4, 5)}\nsoma5 = {round(soma5, 5)}\ndelta = {round(delta, 5)}\n\na = {round(a, 5)} +/- {round(erroa, 5)}\nb = {round(b, 5)} +/- {round(errob, 5)}\n')
 
+print(f"y = {round((a),5)}x - {round(abs(b),5)}\n") if b <= 0 else print(f"y = {round((a),5)}x + {round(abs(b),5)}\n")
+
 print(f"Esses valores consideram o eixo y como sendo o eixo que possui erros estatisticos e/ou experimentais. O eixo x não possui erros. Para calcular os erros no eixo x, basta fazer a inversa da função obtida na regressão, ou seja, \ny = {round((1/a),5)}x - {round(abs(b/a),5)}") if b/a >= 0 else print(f"Esses valores consideram o eixo y como sendo o eixo que possui erros estatisticos e/ou experimentais. O eixo x não possui erros. Para calcular os erros no eixo x, basta fazer a inversa da função obtida na regressão, ou seja, \ny = {round((1/a),5)}x + {round(abs(b/a),5)}")
+
+print('\n----parte específica para o relatório-----')
+
+mtotal = 0.3255
+distancia = 0.7
+
+g = (np.e**b)*mtotal
+errog = g*errob
+
+print(f"\ng = {round(g,5)} +/- {round(errog,5)}\n\nalfa = {round(a,5)} +/- {round(erroa,5)}\n\na' = {round(b,5)} +/- {round(errob,5)}")
